@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAAS.GL — Manual do Usuario</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f172a; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #1e3a5f, #0f172a); border-bottom: 2px solid #3b82f6; padding: 48px 64px; }
+  .header h1 { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  .header p { color: #94a3b8; font-size: 16px; }
+  .badge { background: #3b82f622; border: 1px solid #3b82f6; border-radius: 99px; color: #60a5fa; display: inline-block; font-size: 12px; font-weight: 700; margin-top: 16px; padding: 4px 14px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 48px 32px; }
+  .section { margin-bottom: 56px; }
+  .section-title { border-left: 4px solid #3b82f6; color: #60a5fa; font-size: 24px; font-weight: 800; margin-bottom: 24px; padding-left: 16px; }
+  .subsection { background: #131929; border: 1px solid #1e2a3a; border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+  .subsection-header { background: #1e2a3a; cursor: pointer; padding: 16px 20px; }
+  .subsection-title { color: #f1f5f9; font-size: 15px; font-weight: 700; }
+  .subsection-body { padding: 20px; }
+  .subsection-body p { color: #94a3b8; font-size: 14px; margin-bottom: 10px; }
+  .subsection-body ul { color: #94a3b8; font-size: 14px; padding-left: 20px; }
+  .subsection-body li { margin-bottom: 6px; }
+  .plan-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
+  .plan-card { border-radius: 14px; overflow: hidden; }
+  .plan-header { padding: 20px; }
+  .plan-name { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+  .plan-price { font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+  .plan-sub { font-size: 12px; opacity: 0.7; }
+  .plan-body { background: #131929; padding: 20px; }
+  .plan-item { align-items: center; display: flex; font-size: 13px; gap: 8px; margin-bottom: 8px; }
+  .check { color: #22c55e; font-weight: 700; }
+  .cross { color: #ef4444; font-weight: 700; }
+  .step { align-items: flex-start; display: flex; gap: 16px; margin-bottom: 20px; }
+  .step-num { align-items: center; background: #3b82f6; border-radius: 99px; color: #fff; display: flex; flex-shrink: 0; font-size: 14px; font-weight: 800; height: 32px; justify-content: center; width: 32px; }
+  .step-content h4 { color: #f1f5f9; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .step-content p { color: #94a3b8; font-size: 13px; }
+  .tip { background: #22c55e15; border: 1px solid #22c55e44; border-radius: 8px; color: #4ade80; font-size: 13px; margin-top: 12px; padding: 12px 16px; }
+  .warning { background: #f59e0b15; border: 1px solid #f59e0b44; border-radius: 8px; color: #fbbf24; font-size: 13px; margin-top: 12px; padding: 12px 16px; }
+  .table { border-collapse: collapse; width: 100%; }
+  .table th { background: #1e2a3a; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 12px 16px; text-align: left; text-transform: uppercase; }
+  .table td { border-top: 1px solid #1e2a3a; color: #94a3b8; font-size: 13px; padding: 12px 16px; }
+  .tag { border-radius: 6px; font-size: 11px; font-weight: 700; padding: 2px 8px; }
+  .tag-green { background: #22c55e22; color: #22c55e; }
+  .tag-blue { background: #3b82f622; color: #60a5fa; }
+  .tag-orange { background: #f59e0b22; color: #f59e0b; }
+  .tag-red { background: #ef444422; color: #ef4444; }
+  footer { border-top: 1px solid #1e2a3a; color: #334155; font-size: 12px; margin-top: 64px; padding: 32px 64px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SAAS.GL</h1>
+  <p>Manual Completo do Usuario — Sistema de Gestao para Negocios</p>
+  <div class="badge">Versao 1.0 — 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- INTRODUCAO -->
+  <div class="section">
+    <div class="section-title">Introducao</div>
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">O que e o SAAS.GL?</div></div>
+      <div class="subsection-body">
+        <p>O SAAS.GL e um sistema de gestao completo para pequenos e medios negocios que precisam organizar ordens de servico, clientes, estoque e financeiro em um unico lugar.</p>
+        <p>O sistema roda localmente na maquina do seu negocio, garantindo privacidade total dos seus dados e funcionamento mesmo sem internet.</p>
+        <div class="tip">✓ Seus dados ficam no seu computador — nenhuma informacao e enviada para servidores externos.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANOS -->
+  <div class="section">
+    <div class="section-title">Planos Disponiveis</div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-header" style="background: linear-gradient(135deg,#6366f1,#4f46e5)">
+          <div class="plan-name">Basico</div>
+          <div class="plan-price">R$ 89,90</div>
+          <div class="plan-sub">30 dias gratis, depois R$ 89,90/mes</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-item"><span class="check">✓</span> Todos os modulos</div>
+          <div class="plan-item"><span class="check">✓</span> Ate 20 OS por mes</div>
+          <div class="plan-item"><span class="check">✓</span> Ate 15 clientes</div>
+          <div class="plan-item"><span class="check">✓</span> Ate 30 itens no estoque</div>
+          <div class="plan-item"><span class="check">✓</span> Suporte por email</div>
+          <div class="plan-item"><span class="cross">✗</span> Registros ilimitados</div>
+          <div class="plan-item"><span class="cross">✗</span> IA no estoque</div>
+          <div class="plan-item"><span class="cross">✗</span> Relatorio HTML avancado</div>
+          <div class="plan-item"><span class="cross">✗</span> Multi-usuario</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header" style="background: linear-gradient(135deg,#3b82f6,#1d4ed8)">
+          <div class="plan-name">Profissional</div>
+          <div class="plan-price">R$ 120,90</div>
+          <div class="plan-sub">+ R$ 297,00 implantacao</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-item"><span class="check">✓</span> Tudo do Basico</div>
+          <div class="plan-item"><span class="check">✓</span> Registros ilimitados</div>
+          <div class="plan-item"><span class="check">✓</span> Exportar PDF</div>
+          <div class="plan-item"><span class="check">✓</span> Relatorios avancados</div>
+          <div class="plan-item"><span class="check">✓</span> Suporte prioritario</div>
+          <div class="plan-item"><span class="cross">✗</span> IA no estoque</div>
+          <div class="plan-item"><span class="cross">✗</span> Multi-usuario</div>
+          <div class="plan-item"><span class="cross">✗</span> Personalizacao completa</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header" style="background: linear-gradient(135deg,#f59e0b,#d97706)">
+          <div class="plan-name" style="color:#000">Premium</div>
+          <div class="plan-price" style="color:#000">R$ 176,90</div>
+          <div class="plan-sub" style="color:#00000088">+ R$ 497,00 implantacao</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-item"><span class="check">✓</span> Tudo do Profissional</div>
+          <div class="plan-item"><span class="check">✓</span> IA no estoque</div>
+          <div class="plan-item"><span class="check">✓</span> Multi-usuario</div>
+          <div class="plan-item"><span class="check">✓</span> Suporte via WhatsApp</div>
+          <div class="plan-item"><span class="check">✓</span> Personalizacao completa</div>
+          <div class="plan-item"><span class="check">✓</span> Relatorio HTML avancado</div>
+          <div class="plan-item"><span class="check">✓</span> Logo no orcamento</div>
+          <div class="plan-item"><span class="check">✓</span> Imagem de fundo personalizada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULOS -->
+  <div class="section">
+    <div class="section-title">Modulos do Sistema</div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">📋 Ordens de Servico (O.S.)</div></div>
+      <div class="subsection-body">
+        <p>Gerencie todo o fluxo de servicos do seu negocio, desde a entrada do cliente ate a entrega.</p>
+        <ul>
+          <li>Criar OS com dados completos do cliente e veiculo/produto</li>
+          <li>Catalogo de mais de 60 servicos e pecas pre-cadastrados</li>
+          <li>Avancar status: Recepcao → Diagnostico → Em Servico → Concluido → Entregue</li>
+          <li>Visualizacao em Lista ou Kanban (quadro de cards por status)</li>
+          <li>Gerar orcamento profissional em 2 etapas com pre-visualizacao</li>
+          <li>Imprimir orcamento colorido ou preto e branco</li>
+          <li>Exportar historico em CSV para Excel</li>
+          <li>Lixeira com restauracao de OS excluidas</li>
+          <li>Busca inteligente por cliente, placa ou numero da OS</li>
+          <li>Notificacoes em tempo real de novas OS e mudancas de status</li>
+        </ul>
+        <div class="tip">💡 A OS criada a partir do modulo de Clientes ja vem pre-preenchida com os dados do cliente e veiculo.</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">👥 Clientes</div></div>
+      <div class="subsection-body">
+        <p>Cadastre e gerencie todos os seus clientes com historico completo.</p>
+        <ul>
+          <li>Cadastro completo: nome, telefone, CPF/CNPJ, email, endereco</li>
+          <li>Multiplos veiculos por cliente (placa, modelo, cor, ano, KM)</li>
+          <li>Historico completo de OS por cliente</li>
+          <li>Total gasto pelo cliente</li>
+          <li>Iniciar nova OS diretamente do perfil do cliente</li>
+          <li>Editar e excluir clientes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">📦 Estoque</div></div>
+      <div class="subsection-body">
+        <p>Controle todo o seu estoque de pecas e materiais.</p>
+        <ul>
+          <li>Cadastro de itens com codigo, categoria, quantidade e preco</li>
+          <li>Controle de estoque minimo com alertas automaticos</li>
+          <li>Entradas e saidas de estoque</li>
+          <li>Foto do produto por upload ou URL</li>
+          <li>Busca externa de produtos com precos reais do mercado (IA) — Plano Profissional+</li>
+          <li>Alertas de estoque baixo no Dashboard</li>
+        </ul>
+        <div class="warning">⚠️ A busca inteligente de produtos requer conexao com internet.</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">💰 Financeiro</div></div>
+      <div class="subsection-body">
+        <p>Acompanhe a saude financeira do seu negocio.</p>
+        <ul>
+          <li>Resumo de receitas e despesas</li>
+          <li>Historico de transacoes</li>
+          <li>Integracao com os totais das OS</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">📊 Dashboard</div></div>
+      <div class="subsection-body">
+        <p>Visao geral do seu negocio em tempo real.</p>
+        <ul>
+          <li>Total de OS abertas e concluidas</li>
+          <li>Receita do mes e ticket medio</li>
+          <li>Grafico de faturamento por mes</li>
+          <li>Pizza de OS por status</li>
+          <li>OS abertas nos ultimos 7 dias</li>
+          <li>Alertas de estoque baixo</li>
+          <li>Resumo geral com totais</li>
+        </ul>
+        <div class="tip">💡 O Dashboard atualiza automaticamente a cada 30 segundos.</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">📄 Orcamentos</div></div>
+      <div class="subsection-body">
+        <p>Gere orcamentos profissionais personalizados com a identidade do seu negocio.</p>
+        <ul>
+          <li>Nome, telefone, endereco e dados da empresa no cabecalho</li>
+          <li>Logo personalizada — Plano Profissional+</li>
+          <li>Fundo personalizado (cor solida, gradiente ou imagem) — Plano Premium</li>
+          <li>Tipografia moderna para plano Basico</li>
+          <li>Tipos de documento configuráveis (servico geral, consultoria, etc)</li>
+          <li>Pre-visualizacao antes de imprimir</li>
+          <li>Impressao colorida ou preto e branco</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FLUXO DE TRABALHO -->
+  <div class="section">
+    <div class="section-title">Fluxo de Trabalho Recomendado</div>
+    <div class="subsection">
+      <div class="subsection-header"><div class="subsection-title">Como usar o sistema no dia a dia</div></div>
+      <div class="subsection-body">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Cliente chega ao balcao</h4>
+            <p>Acesse Clientes → verifique se ja esta cadastrado → se nao, cadastre com nome, telefone e veiculo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Abrir a OS</h4>
+            <p>Clique em "+ Iniciar OS" no perfil do cliente ou "+ Nova OS" na tela de O.S. Preencha o relato do cliente e servicos solicitados.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Diagnostico e aprovacao</h4>
+            <p>Avance o status para "Diagnostico", gere o orcamento e apresente ao cliente. Aguarde aprovacao.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Execucao do servico</h4>
+            <p>Avance para "Em Servico". Ao finalizar, avance para "Concluido".</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Entrega e fechamento</h4>
+            <p>Imprima o orcamento final para o cliente assinar. Avance para "Entregue".</p>
+          </div>
+        </div>
+        <div class="tip">💡 Use o Kanban para visualizar todas as OS em andamento de forma rapida e intuitiva.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATUS DAS OS -->
+  <div class="section">
+    <div class="section-title">Status das Ordens de Servico</div>
+    <div class="subsection">
+      <div class="subsection-body" style="padding:0">
+        <table class="table">
+          <thead><tr><th>Status</th><th>Significado</th><th>Proximo passo</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-blue">Recepcao</span></td><td>OS criada, cliente registrado</td><td>Iniciar diagnostico</td></tr>
+            <tr><td><span class="tag tag-orange">Diagnostico</span></td><td>Avaliando o problema</td><td>Gerar orcamento</td></tr>
+            <tr><td><span class="tag" style="background:#f9731622;color:#fb923c">Aguardando Aprovacao</span></td><td>Orcamento enviado ao cliente</td><td>Aguardar confirmacao</td></tr>
+            <tr><td><span class="tag tag-blue">Em Servico</span></td><td>Servico em execucao</td><td>Finalizar e concluir</td></tr>
+            <tr><td><span class="tag" style="background:#eab30822;color:#fde047">Aguardando Pecas</span></td><td>Aguardando chegada de materiais</td><td>Receber pecas e continuar</td></tr>
+            <tr><td><span class="tag tag-green">Concluido</span></td><td>Servico finalizado</td><td>Chamar cliente para retirada</td></tr>
+            <tr><td><span class="tag" style="background:#94a3b822;color:#94a3b8">Entregue</span></td><td>Cliente retirou o produto/veiculo</td><td>OS encerrada</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACOES -->
+  <div class="section">
+    <div class="section-title">Notificacoes</div>
+    <div class="subsection">
+      <div class="subsection-body">
+        <p>O sistema envia notificacoes automaticas para manter voce informado em tempo real.</p>
+        <ul>
+          <li>📋 Nova OS criada</li>
+          <li>🔄 Status de OS alterado</li>
+          <li>⏳ OS aguardando aprovacao</li>
+          <li>✅ OS concluida</li>
+          <li>⚠️ OS parada ha mais de 24 horas sem movimentacao</li>
+        </ul>
+        <div class="tip">💡 Clique no sino 🔔 no topo da tela para ver todas as notificacoes. Clique em cada uma para marcar como lida.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACKUP -->
+  <div class="section">
+    <div class="section-title">Backup e Seguranca</div>
+    <div class="subsection">
+      <div class="subsection-body">
+        <p>O sistema realiza backup automatico diario as 23:00 de todos os dados.</p>
+        <ul>
+          <li>Backup completo do banco de dados</li>
+          <li>Os ultimos 7 backups sao mantidos automaticamente</li>
+          <li>Arquivos salvos em: <code style="background:#1e2a3a;padding:2px 6px;border-radius:4px">saas-multitenant/backups/</code></li>
+          <li>Comunicacao criptografada com HTTPS/TLS</li>
+        </ul>
+        <div class="warning">⚠️ Recomendamos um nobreak para proteger contra quedas de energia.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPORTE -->
+  <div class="section">
+    <div class="section-title">Suporte</div>
+    <div class="subsection">
+      <div class="subsection-body">
+        <table class="table">
+          <thead><tr><th>Plano</th><th>Canal</th><th>Tempo de resposta</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-blue">Basico</span></td><td>Email</td><td>Ate 48 horas uteis</td></tr>
+            <tr><td><span class="tag tag-blue">Profissional</span></td><td>Email prioritario</td><td>Ate 24 horas uteis</td></tr>
+            <tr><td><span class="tag tag-orange">Premium</span></td><td>WhatsApp + Email</td><td>Ate 4 horas uteis</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  SAAS.GL — Sistema de Gestao — Versao 1.0 — 2026 — Confidencial
+</footer>
+
+</body>
+</html>
